@@ -20,13 +20,17 @@ var wrongWord = []; // user's incorrect guesses
 function generateUnderscore() {
 	currentWord = wordsArr[Math.floor(Math.random()*wordsArr.length)];
 	console.log(currentWord);
-	for (i = 0; i < currentWord.length; i++) {
-		console.log(currentWord);
-		console.log(underScore);
-		underScore.push('_');
 		console.log(document.querySelector(".docUnderScore") + " generate");
 		console.log(underScore + " generate1");
 		document.querySelector(".docUnderScore").innerHTML = underScore.join(' ');
+	
+}
+
+for (i = 0; i < currentWord.length; i++) {
+	underScore[i] = "_";
+	if (currentWord[i] === currentGuessed) {
+		rightWord[i] = currentGuessed;
+		console.log(underScore);
 	}
 }
 
@@ -41,6 +45,8 @@ var reset = function() {
 	document.querySelector("#wrongGuess").innerHTML = "";
 	generateUnderscore();
 	}
+
+
 
 
 // get user's guess
@@ -99,8 +105,4 @@ document.onkeyup = function(event) {
 	}  
 };
 reset();
-
-// docUnderScore[0].innerHTML = generateUnderscore().join(" ");
-
-
 
