@@ -3,14 +3,17 @@ var wins = 0; // (# of times the user has guessed correctly)
 var guessesLeft = 9; // (# of guesses left. This will update)
 
 // create an array of words
-var wordsArr = ["cat", "dog", "flower", "bats", "steak", "oranges", "algorithms", "flamingoes", "pitchforks", "outlandish"]; // answer choices
+var wordsArr = ["ivysaur", "cyndaquil", "togepi", "pidgeot", "raichu", "vulpix", "growlithe", "onix",
+                "cubone", "articuno", "pichu", "xatu", "umbreon", "swinub", "tyrogue", "lugia", "combusken",
+                "mudkip", "shiftry", "ralts", "aron", "ivysaur"]; // answer choices
 
 // choose word randomly
 var currentWord = wordsArr[Math.floor(Math.random()*wordsArr.length)]; // randomize words for user to guess
 var underScore = []; // underscore based on length of word
 
 // Full list of choices user can choose from
-// var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+               "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var currentGuessed = []; // user's guesses so far in a round
 var rightWord = []; // user's correct guesses
 var wrongWord = []; // user's incorrect guesses
@@ -21,14 +24,82 @@ function generateUnderscore() {
 	currentWord = wordsArr[Math.floor(Math.random()*wordsArr.length)];
 	console.log(currentWord);
 	for (i = 0; i < currentWord.length; i++) {
-		console.log(currentWord);
-		console.log(underScore);
 		underScore.push('_');
-		console.log(document.querySelector(".docUnderScore") + " generate");
-		console.log(underScore + " generate1");
 		document.querySelector(".docUnderScore").innerHTML = underScore.join(' ');
 	}
 }
+
+// image associated with the current word
+function image() {
+	if (currentWord === "ivysaur") {
+			document.getElementById("guessImage").src = "assets/images/ivysaur.png";
+	}
+	if (currentWord === "cyndaquil") {
+			document.getElementById("guessImage").src = "assets/images/cyndaquil.png";
+	}
+	if (currentWord === "togepi") {
+			document.getElementById("guessImage").src = "assets/images/togepi.png";
+	}
+	if (currentWord === "pidgeot") {
+			document.getElementById("guessImage").src = "assets/images/pidgeot.png";
+	}
+	if (currentWord === "raichu") {
+			document.getElementById("guessImage").src = "assets/images/raichu.png";
+	}
+	if (currentWord === "vulpix") {
+			document.getElementById("guessImage").src = "assets/images/vulpix.png";
+	}
+	if (currentWord === "growlithe") {
+			document.getElementById("guessImage").src = "assets/images/growlithe.png";
+	}
+	if (currentWord === "onix") {
+			document.getElementById("guessImage").src = "assets/images/onix.png";
+	}
+	if (currentWord === "cubone") {
+			document.getElementById("guessImage").src = "assets/images/cubone.png";
+	}
+	if (currentWord === "articuno") {
+			document.getElementById("guessImage").src = "assets/images/articuno.png";
+	}
+	if (currentWord === "pichu") {
+			document.getElementById("guessImage").src = "assets/images/pichu.png";
+	}
+	if (currentWord === "xatu") {
+			document.getElementById("guessImage").src = "assets/images/xatu.png";
+	}
+	if (currentWord === "umbreon") {
+			document.getElementById("guessImage").src = "assets/images/umbreon.png";
+	}
+	if (currentWord === "swinub") {
+			document.getElementById("guessImage").src = "assets/images/swinub.png";
+	}
+	if (currentWord === "tyrogue") {
+			document.getElementById("guessImage").src = "assets/images/tyrogue.png";
+	}
+	if (currentWord === "lugia") {
+			document.getElementById("guessImage").src = "assets/images/lugia.png";
+	}
+	if (currentWord === "combusken") {
+			document.getElementById("guessImage").src = "assets/images/combusken.png";
+	}
+	if (currentWord === "mudkip") {
+			document.getElementById("guessImage").src = "assets/images/mudkip.png";
+	}
+	if (currentWord === "shiftry") {
+			document.getElementById("guessImage").src = "assets/images/shiftry.png";
+	}
+	if (currentWord === "ralts") {
+			document.getElementById("guessImage").src = "assets/images/ralts.png";
+	}
+	if (currentWord === "aron") {
+			document.getElementById("guessImage").src = "assets/images/aron.png";
+	}
+	if (currentWord === "ivysaur") {
+			document.getElementById("guessImage").src = "assets/images/ivysaur.png";
+	}
+}
+
+
 
 // resets to new round
 var reset = function() {
@@ -40,6 +111,7 @@ var reset = function() {
 	document.querySelector(".guesses").innerHTML = "Number of guesses remaining: 9";
 	document.querySelector("#wrongGuess").innerHTML = "";
 	generateUnderscore();
+	image();
 	}
 
 
@@ -52,13 +124,14 @@ document.onkeyup = function(event) {
 	var userGuess = event.key.toLowerCase();
 	console.log(userGuess);
 	var indexNum = currentWord.indexOf(userGuess);
-	// // if user's guess != a letter
-	// if (letters.indexOf(userGuess) === -1) {
-	// 	return alert("You must pick a letter to play!");
-	// } // if user already guessed that letter
-	// if (currentGuessed.indexOf(userGuess) !== -1) {
-	// 	return alert("You already guessed that letter. Pick something else!");
-	// }
+
+	// if user's guess != a letter
+	if (letters.indexOf(userGuess) === -1) {
+		return alert("You must pick a letter to play!");
+	} // if user already guessed that letter
+	if (currentGuessed.indexOf(userGuess) !== -1) {
+		return alert("You already guessed that letter. Pick something else!");
+	}
 
 	// if user's guess is right
 	if (indexNum > -1) { 
@@ -96,11 +169,15 @@ document.onkeyup = function(event) {
 			guessesLeft--;
 			document.querySelector(".guesses").innerHTML = "Number of guesses remaining: " + guessesLeft;	
 		}  
-	}  
+	}
+	
 };
+
+
+
+
 reset();
 
-// docUnderScore[0].innerHTML = generateUnderscore().join(" ");
 
 
 

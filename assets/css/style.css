@@ -1,39 +1,52 @@
 body {
 	text-align: center;
-	font-family: arial;
+	font-family: 'Roboto', sans-serif;
+}
+#page {
+	background-color: #f2f2f2;
+}
+.container {
+	width: 65%;
+	text-align: center;
+	align-content: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 #header {
-	color: gold;
 	font-size: 50px;
-	font-family: 'Petit Formal Script', cursive;
+	font-family: 'Lato', sans-serif;
 	font-weight: bold;
 }
-#content {
-	width: 800px;
-	align-content: center;
-	margin: -16px auto 5% auto;
-	overflow-x: auto;
-}
 #guessContent {
-	background-color: green;
-	color: white;
 	padding: 5%;
-	border: 12px solid gold;
 } 
 .docUnderScore {
-	color: black;
-	background-color: white;
-	font-size: 70px;
+	color: grey;
+	font-size: 60px;
 	font-weight: bolder;
-	border: 3px solid grey;
 	padding: 10px;
 }
 .win {
 	margin: 5%;
+	color: #f7d725;
+	font-weight: bold;
+}
+.displayImage {
+	float: right;
+	border-bottom: 3px #f7d725 solid;
+	margin-bottom: 40px;
+	margin-top: 50px;
 }
 h3, p {
-	font-size: 24px;
+	font-size: 22px;
 }
 footer {
 	margin: 15% auto 0 auto;
 }
+
+
+
+
+    
+    
+
