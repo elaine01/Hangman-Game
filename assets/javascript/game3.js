@@ -18,16 +18,15 @@ var wrongWord = []; // user's incorrect guesses
 
 // create underscores based on length of word
 function generateUnderscore() {
-	underScore = [];
 	currentWord = wordsArr[Math.floor(Math.random()*wordsArr.length)];
 	console.log(currentWord);
 	for (i = 0; i < currentWord.length; i++) {
+		console.log(currentWord);
+		console.log(underScore);
 		underScore.push('_');
 		console.log(document.querySelector(".docUnderScore") + " generate");
 		console.log(underScore + " generate1");
 		document.querySelector(".docUnderScore").innerHTML = underScore.join(' ');
-		
-
 	}
 }
 
@@ -37,6 +36,7 @@ var reset = function() {
 	currentGuessed = [];
 	rightWord = [];
 	wrongWord = [];
+	underScore = [];
 	document.querySelector(".guesses").innerHTML = "Number of guesses remaining: 9";
 	document.querySelector("#wrongGuess").innerHTML = "";
 	generateUnderscore();
