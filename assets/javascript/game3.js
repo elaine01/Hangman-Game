@@ -3,7 +3,7 @@ var wins = 0; // (# of times the user has guessed correctly)
 var guessesLeft = 9; // (# of guesses left. This will update)
 
 // create an array of words
-var wordsArr = ["cat", "dog", "flower", "bats", "steak", "oranges", "microphone", "algorithms", "flamingoes", "pitchforks", "outlandish"]; // answer choices
+var wordsArr = ["cat", "dog", "flower", "bats", "steak", "oranges", "algorithms", "flamingoes", "pitchforks", "outlandish"]; // answer choices
 
 // choose word randomly
 var currentWord = wordsArr[Math.floor(Math.random()*wordsArr.length)]; // randomize words for user to guess
@@ -23,9 +23,11 @@ function generateUnderscore() {
 	console.log(currentWord);
 	for (i = 0; i < currentWord.length; i++) {
 		underScore.push('_');
-		document.querySelector("#docUnderScore").innerHTML = underScore.join(' ');
-		console.log(document.querySelector("#docUnderScore") + " generate");
+		console.log(document.querySelector(".docUnderScore") + " generate");
 		console.log(underScore + " generate1");
+		document.querySelector(".docUnderScore").innerHTML = underScore.join(' ');
+		
+
 	}
 }
 
@@ -40,7 +42,7 @@ var reset = function() {
 	generateUnderscore();
 	}
 
-reset();
+
 
 
 // get user's guess
@@ -67,16 +69,16 @@ document.onkeyup = function(event) {
 			if (currentWord[i] === userGuess) {
 				// replace underscore with right letter
 				underScore[currentWord.indexOf(userGuess)] = userGuess;
-				docUnderScore.innerHTML = underScore.join(" ");
+				document.querySelector(".docUnderScore").innerHTML = underScore.join(" ");
 				console.log(underScore.join(" "));
 			}
 			// docdocUnderScore.innerHTML = rightWord;
 			if (currentWord.indexOf(userGuess) === -1) {
-				document.getElementById("docUnderScore").innerHTML = underScore.join(' ');
+				document.querySelector(".docUnderScore").innerHTML = underScore.join(' ');
 				wrongWord.push(userGuess);
 				document.getElementById("wrongGuess").innerHTML = wrongWord.join(' ');
 			}
-			if (underScore.join('') === currentWord) {
+			else if (underScore.join('') === currentWord) {
 			// console.log(underScore + " in if");
 			wins++;
 			document.querySelector(".win").innerHTML = "Wins: " + wins;
@@ -98,6 +100,7 @@ document.onkeyup = function(event) {
 		}  
 	}  
 };
+reset();
 
 // docUnderScore[0].innerHTML = generateUnderscore().join(" ");
 
