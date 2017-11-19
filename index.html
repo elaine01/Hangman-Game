@@ -5,16 +5,23 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Petit+Formal+Script" rel="stylesheet"> 
 </head>
 <body>
 
-	<p>Press any key to get started!</p>
-	<p class="win">Wins: 0 <br>
-		<span id="docUnderScore">  </span> 
-	</p>
-	<p class="rightGuess"></p>
-	<p class="guesses"> Number of guesses remaining: 9 </p>
-	<p>Letters already guessed: <span id="wrongGuess"> </span></p>
+<div id="content">
+	<div id="header">
+		<p><img src="assets/images/header.png" alt="wheel of fortune"></p>
+	</div>
+	<div id="guessContent">
+		<h3>Press any key to get started!</h3>
+		<p class="win">Wins: 0 <br><br>
+			<span id="docUnderScore">  </span> 
+		</p>
+		<p class="guesses"> Number of guesses remaining: 9 </p>
+		<p>Letters already guessed: <span id="wrongGuess"> </span></p>
+	</div>
+</div>
 
  <script type="text/javascript" src="assets/javascript/game3.js"></script>
 </body>

@@ -3,7 +3,7 @@ var wins = 0; // (# of times the user has guessed correctly)
 var guessesLeft = 9; // (# of guesses left. This will update)
 
 // create an array of words
-var wordsArr = ["cat", "dog", "penguin", "bats"]; // answer choices
+var wordsArr = ["cat", "dog", "flower", "bats", "steak", "oranges", "microphone", "algorithms", "flamingoes", "pitchforks", "outlandish"]; // answer choices
 
 // choose word randomly
 var currentWord = wordsArr[Math.floor(Math.random()*wordsArr.length)]; // randomize words for user to guess
@@ -80,6 +80,7 @@ document.onkeyup = function(event) {
 			// console.log(underScore + " in if");
 			wins++;
 			document.querySelector(".win").innerHTML = "Wins: " + wins;
+			alert("You win!");
 			reset();
 			}
 		}
