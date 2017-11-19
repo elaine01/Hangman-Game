@@ -9,9 +9,10 @@ body {
 	font-weight: bold;
 }
 #content {
-	width: 750px;
+	width: 800px;
 	align-content: center;
 	margin: -16px auto 5% auto;
+	overflow-x: auto;
 }
 #guessContent {
 	background-color: green;
