@@ -38,6 +38,9 @@ body {
 	margin-bottom: 40px;
 	margin-top: 50px;
 }
+.media {
+	left: 50%;	
+}
 h3, p {
 	font-size: 22px;
 }
