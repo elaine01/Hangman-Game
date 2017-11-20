@@ -100,7 +100,6 @@ function image() {
 }
 
 
-
 // resets to new round
 var reset = function() {
 	guessesLeft = 9;
@@ -127,11 +126,12 @@ document.onkeyup = function(event) {
 
 	// if user's guess != a letter
 	if (letters.indexOf(userGuess) === -1) {
+		console.log(letters.indexOf(userGuess));
 		return alert("You must pick a letter to play!");
 	} // if user already guessed that letter
-	if (currentGuessed.indexOf(userGuess) !== -1) {
-		return alert("You already guessed that letter. Pick something else!");
-	}
+	// if (currentGuessed.indexOf(userGuess) !== -1) { // User already guessed letter
+	// 	return alert("You already guessed that letter. Pick something else!");
+	// }
 
 	// if user's guess is right
 	if (indexNum > -1) { 
@@ -141,7 +141,6 @@ document.onkeyup = function(event) {
 				// replace underscore with right letter
 				underScore[currentWord.indexOf(userGuess)] = userGuess;
 				document.querySelector(".docUnderScore").innerHTML = underScore.join(" ");
-				console.log(underScore.join(" "));
 			}
 			// docdocUnderScore.innerHTML = rightWord;
 			if (currentWord.indexOf(userGuess) === -1) {
@@ -163,8 +162,6 @@ document.onkeyup = function(event) {
 			reset();
 		} else {
 			wrongWord.push(userGuess);
-			console.log(document.getElementById("wrongGuess"));
-			console.log(wrongWord);
 			document.getElementById("wrongGuess").innerHTML = wrongWord.join(' ');	
 			guessesLeft--;
 			document.querySelector(".guesses").innerHTML = "Number of guesses remaining: " + guessesLeft;	
