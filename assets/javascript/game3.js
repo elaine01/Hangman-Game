@@ -152,6 +152,8 @@ document.onkeyup = function(event) {
 			// console.log(underScore + " in if");
 			wins++;
 			document.querySelector(".win").innerHTML = "Wins: " + wins;
+			var audio = new Audio("assets/sounds/victory.mp3");
+			audio.play();
 			alert("You win!");
 			reset();
 			}
